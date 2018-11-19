@@ -37,29 +37,6 @@ int angulo_0 =45;
 
 double Xprimera_derivada(double vX);
 double Xsegunda_derivada(double vX,double vY);
-
-double Ysegunda_derivada(double vX,double vY){
-
-	return -g-(c/m)*vY*pow((vX*vX)+(vY*vY),0.5);
-}
-
-double Xsegunda_derivada(double vX,double vY){
-	return -(c/m)*vX*pow((vX*vX)+(vY*vY),0.5);
-}
-
-void rellena(double velX,double velY,double posY,double posX){
-posX[1]=posX[0]+dt*Xprimera_derivada(velX[0],velY[0]);
-posY[1]=posY[0]+dt*Yprimera_derivada(velX[0],velY[0]);
-
-velX[1]=velX[0]+dt*Xsegunda_derivada(velX[0],velY[0]);
-velY[1]=velY[0]+dt*Ysegunda_derivada(velX[0],velY[0]);}
-
-
-
-
-
-
-
 double Yprimera_derivada(double vY);
 double Ysegunda_derivada(double vX,double vY);
 double valorvelx(int angulo,double velocidad);
@@ -79,6 +56,37 @@ double valorvely(int angulo,double velocidad){
 	return velocidad*sin(angulo*(pi/180));
 }
 
+double Xprimera_derivada(double vX){
 
+	return vX;
+}
+double Yprimera_derivada(double vY){
+	return vY;
+}
 
+double Ysegunda_derivada(double vX,double vY){
+
+	return -g-(c/m)*vY*pow((vX*vX)+(vY*vY),0.5);
+}
+
+double Xsegunda_derivada(double vX,double vY){
+	return -(c/m)*vX*pow((vX*vX)+(vY*vY),0.5);
+}
+
+void rellena(double velX,double velY,double posY,double posX){
+posX[1]=posX[0]+dt*Xprimera_derivada(velX[0],velY[0]);
+posY[1]=posY[0]+dt*Yprimera_derivada(velX[0],velY[0]);
+
+velX[1]=velX[0]+dt*Xsegunda_derivada(velX[0],velY[0]);
+velY[1]=velY[0]+dt*Ysegunda_derivada(velX[0],velY[0]);}
+
+void rellena2(double velX,double velY,double posY,double posX){
+for (int i=1,i<N,i++){
+
+posX[i+1]=posX[i-1]+2*dt*Xprimera_derivada(velX[i-1],velY[i-1]);
+posY[i+1]=posY[i-1]+2*dt*Yprimera_derivada(velX[i-1],velY[i-1]);
+
+velX[1]=velX[i-1]+2*dt*Xsegunda_derivada(velX[i-1],velY[i-1);
+velY[1]=velY[i-1]+2*dt*Ysegunda_derivada(velX[i-1],velY[i-1]);
+}}
 
