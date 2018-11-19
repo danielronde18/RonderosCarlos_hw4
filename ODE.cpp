@@ -38,6 +38,28 @@ int angulo_0 =45;
 double Xprimera_derivada(double vX);
 double Xsegunda_derivada(double vX,double vY);
 
+double Ysegunda_derivada(double vX,double vY){
+
+	return -g-(c/m)*vY*pow((vX*vX)+(vY*vY),0.5);
+}
+
+double Xsegunda_derivada(double vX,double vY){
+	return -(c/m)*vX*pow((vX*vX)+(vY*vY),0.5);
+}
+
+void rellena(double velX,double velY,double posY,double posX){
+posX[1]=posX[0]+dt*Xprimera_derivada(velX[0],velY[0]);
+posY[1]=posY[0]+dt*Yprimera_derivada(velX[0],velY[0]);
+
+velX[1]=velX[0]+dt*Xsegunda_derivada(velX[0],velY[0]);
+velY[1]=velY[0]+dt*Ysegunda_derivada(velX[0],velY[0]);}
+
+
+
+
+
+
+
 double Yprimera_derivada(double vY);
 double Ysegunda_derivada(double vX,double vY);
 double valorvelx(int angulo,double velocidad);
