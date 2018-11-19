@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\author{Carlos Ronderos 201623526}
+\title{Tarea_hw4}
+
+
+\maketitle
+
+\section{ODE}
+se modelo o esquematizo el movimiento parabolico con un angulo inicial de 45° para posteriormente realizar la variacion de este angulo desde 10° a 80°  la trayectoria descrita por el movimiento parabolico tiene una friccion de $v^2$
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{45.pdf}
+\caption{Trayectoria 45°}
+\label{Fig.}
+\end{figure}
+
+se modelaron las trayectorias de el movimiento parabolico para angulos entre 10° y 80° respecto a la horizontal
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{variadas.pdf}
+\caption{Trayectoria comprendida por los diferentes angulos}
+\label{Fig.}
+\end{figure}
+
+
+\end{document}
