@@ -29,7 +29,13 @@ plt.legend()
 plt.ylim(0,5)
 plt.savefig("45.pdf")
 
+angx=["x10","x20","x30","x40","x50","x60","x70"]
+angy=["y10","y20","y30","y40","y50","y60","y70"]
+ang=[10,20,30,40,50,60,70]
 
+
+
+angulos=np.genfromtxt("diferentesangulos.txt")
 
 
 
