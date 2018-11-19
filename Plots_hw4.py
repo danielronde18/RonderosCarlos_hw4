@@ -55,3 +55,11 @@ plt.savefig("variadas.pdf")
 
 	
 
+valorMax=np.linspace(10,100,7)
+
+for i in range(len(angx)):
+	aux=100
+	for j in range(1000,t):
+		if(abs(angy[i][j])<aux):
+			aux=angy[i][j]
+			valorMax[i]=angx[i][j]
