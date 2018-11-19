@@ -89,4 +89,27 @@ posY[i+1]=posY[i-1]+2*dt*Yprimera_derivada(velX[i-1],velY[i-1]);
 velX[1]=velX[i-1]+2*dt*Xsegunda_derivada(velX[i-1],velY[i-1);
 velY[1]=velY[i-1]+2*dt*Ysegunda_derivada(velX[i-1],velY[i-1]);
 }}
+							
+void angulosvarios(){
+int angulomin=10;
+int angulomax=80;
+
+for (int i=angulomin,i<=angulomax,i+10){
+tiemp[0]=t_0;
+posX[0]=x_0;
+posY[0]=y_0;
+int ang=i;
+velX[0]=valorvelx( ang,vel_0);
+velY[0]=valorvelx( ang, vel_0);
+
+
+rellena(velX, velY, posY, posX);
+rellena2(velX, velY, posY, posX);
+
+for(int i=1,i<N,i++){
+file2<<posX[i]<<""<<velX[i]<<""<<posY[i]<<""<<velY[i]<<endl;
+}
+}
+}
+							
 
