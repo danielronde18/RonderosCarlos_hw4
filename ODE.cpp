@@ -111,5 +111,45 @@ file2<<posX[i]<<""<<velX[i]<<""<<posY[i]<<""<<velY[i]<<endl;
 }
 }
 }
+
+							int main(){
+
+
+
+tiemp[0]=t_0;
+posX[0]=x_0;
+posY[0]=y_0;
+velX[0]=valorvelx( angulo_0, vel_0);
+velY[0]=valorvelx( angulo_0, vel_0);
+
+rellena( velX,velY, posY, posX);
+
+rellena2(velX, velY, posY, posX);
+
+
+std::ofstream file;
+
+
+file.open("45.txt")
+
+
+
+for(int i=1,i<N,i++){
+file<<posX[i]<<""<<velX[i]<<""<<posY[i]<<""<<velY[i]<<endl;
+}
+
+
+std::ofstream file2;
+file2.open("diferentesangulos.txt")
+
+angulosvarios();
+
+file2.close();
+
+
+
+return 0;
+}
+							
 							
 
